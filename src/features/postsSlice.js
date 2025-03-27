@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Async thunk to fetch posts from API
-export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-  const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+// Async thunk to fetch posts from a given URL
+export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (url) => {
+  const response = await axios.get(url);
   return response.data;
 });
 
@@ -23,6 +23,7 @@ const postsSlice = createSlice({
       .addCase(fetchPosts.pending, (state) => {
         state.loading = true; // Set loading to true while fetching
         state.error = null; // Clear previous errors
+        state.data=[];//Set data to empty array
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
         state.loading = false; // Set loading to false when data is received
