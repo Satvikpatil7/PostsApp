@@ -1,12 +1,34 @@
-# React + Vite
+# Posts App 📝  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React app that fetches and displays posts using **Redux Toolkit** and a **custom hook**.  
 
-Currently, two official plugins are available:
+## Features  
+✅ Fetch posts from an API using Redux Async Thunk  
+✅ Manage global state with Redux Toolkit  
+✅ Use a custom hook (`useFetch`) to handle data fetching  
+✅ Refresh posts with a button  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation  
 
-## Expanding the ESLint configuration
+```sh
+pnpm install
+pnpm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure  
+
+- **Redux Store**: Manages global state (`store.js`)  
+- **Redux Slice**: Handles API calls and state (`postsSlice.js`)  
+- **Custom Hook (`useFetch.js`)**: Fetches and refreshes posts  
+- **Component (`PostsList.js`)**: Displays posts using the custom hook  
+
+## Usage  
+
+- The app fetches posts when loaded.  
+- Click the **Refresh** button to fetch new data.  
+
+## Tech Stack  
+- React  
+- Redux Toolkit  
+- PNPM  
+
